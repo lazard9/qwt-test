@@ -1557,7 +1557,19 @@ textarea {
 }
 
 .investment-inner .swiper-slide {
-    width: 350px;
+    width: 300px;
+}
+
+@media screen and (min-width: 768px) {
+    .investment-inner .swiper-slide {
+        width: 324px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .investment-inner .swiper-slide {
+        width: 347px;
+    }
 }
 
 .investment-inner .swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
