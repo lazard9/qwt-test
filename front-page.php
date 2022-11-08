@@ -15,16 +15,42 @@ get_header(); ?>
 
         <div class="home-wrapper">
             <div class="home-hero padding-lr">
-                <div class="hero-card hero-flex">
-                    <div class="hero-l">
-                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/hero.png" class="hero-image" alt="Something..." decoding="async" width="310px" height="294px">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="hero-card-wrapper">
+                                <div class="hero-card hero-flex">
+                                    <div class="hero-l">
+                                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/hero.png" class="hero-image" alt="Something..." decoding="async" width="310px" height="294px">
+                                    </div>
+                                    <div class="hero-r">
+                                        <h2 class="hero-title">Hero Title I</h2>
+                                        <p class="hero-description">A quick supportive, and easy to understand catchphrase, slogan, tagline, or the punchline of the brand.</p>
+                                        <button href="#" class="hero-cta">Call to Action</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="hero-card-wrapper">
+                                <div class="hero-card hero-flex">
+                                    <div class="hero-l">
+                                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/hero.png" class="hero-image" alt="Something..." decoding="async" width="310px" height="294px">
+                                    </div>
+                                    <div class="hero-r">
+                                        <h2 class="hero-title">Hero Title II</h2>
+                                        <p class="hero-description">A quick supportive, and easy to understand catchphrase, slogan, tagline, or the punchline of the brand.</p>
+                                        <button href="#" class="hero-cta">Call to Action</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="hero-r">
-                        <h2 class="hero-title">Hero Title</h2>
-                        <p class="hero-description">A quick supportive, and easy to understand catchphrase, slogan, tagline, or the punchline of the brand.</p>
-                        <button href="#" class="hero-cta">Call to Action</button>
-                    </div>
-                </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>  
             </div>
 
             <div class="home-investment padding-lr">
