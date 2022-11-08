@@ -56,32 +56,71 @@ get_header(); ?>
             <div class="home-investment padding-lr">
                 <div class="investment-inner">
                     <h2 class="investment-title">Imperdiet eget</h2>
-                    <div class="investment-cards-wrapp">
-                        <div class="investment-cards">
-                            <div class="card">
-                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/investment-1.png" class="card-image" alt="Something..." decoding="async" width="263" height="254">
-                                <h3 class="card-title">Card Title</h3>
-                                <p class="card-description">Supportive text and the essential context goes here.</p>
-                                <a href="#" class="card-cta">Action</a>
+                    <!--
+                    <div class="investment-cards">
+                        <div class="card">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/investment-1.png" class="card-image" alt="Something..." decoding="async" width="263" height="254">
+                            <h3 class="card-title">Card Title</h3>
+                            <p class="card-description">Supportive text and the essential context goes here.</p>
+                            <a href="#" class="card-cta">Action</a>
+                        </div>
+                        <div class="card">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/investment-2.png" class="card-image" alt="Something..." decoding="async" width="263" height="254">
+                            <h3 class="card-title">Card Title</h3>
+                            <p class="card-description">Supportive text and the essential context goes here.</p>
+                            <a href="#" class="card-cta">Action</a>
+                        </div>
+                        <div class="card">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/investment-3.png" class="card-image" alt="Something..." decoding="async" width="263" height="254">
+                            <h3 class="card-title">Card Title</h3>
+                            <p class="card-description">Supportive text and the essential context goes here.</p>
+                            <a href="#" class="card-cta">Action</a>
+                        </div>
+                        <div class="card">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/investment-1.png" class="card-image" alt="Something..." decoding="async" width="263" height="254">
+                            <h3 class="card-title">Card Title</h3>
+                            <p class="card-description">Supportive text and the essential context goes here.</p>
+                            <a href="#" class="card-cta">Action</a>
+                        </div>
+                    </div>-->
+
+                    <div class="investment-swipper-row">
+                        <div class="swiper mySwiper2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="slider-card">
+                                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/investment-1.png" class="card-image" alt="Something..." decoding="async" width="263" height="254">
+                                        <h3 class="card-title">Card Title</h3>
+                                        <p class="card-description">Supportive text and the essential context goes here.</p>
+                                        <a href="#" class="card-cta">Action</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slider-card">
+                                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/investment-2.png" class="card-image" alt="Something..." decoding="async" width="263" height="254">
+                                        <h3 class="card-title">Card Title</h3>
+                                        <p class="card-description">Supportive text and the essential context goes here.</p>
+                                        <a href="#" class="card-cta">Action</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slider-card">
+                                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/investment-3.png" class="card-image" alt="Something..." decoding="async" width="263" height="254">
+                                        <h3 class="card-title">Card Title</h3>
+                                        <p class="card-description">Supportive text and the essential context goes here.</p>
+                                        <a href="#" class="card-cta">Action</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slider-card">
+                                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/investment-2.png" class="card-image" alt="Something..." decoding="async" width="263" height="254">
+                                        <h3 class="card-title">Card Title</h3>
+                                        <p class="card-description">Supportive text and the essential context goes here.</p>
+                                        <a href="#" class="card-cta">Action</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card">
-                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/investment-2.png" class="card-image" alt="Something..." decoding="async" width="263" height="254">
-                                <h3 class="card-title">Card Title</h3>
-                                <p class="card-description">Supportive text and the essential context goes here.</p>
-                                <a href="#" class="card-cta">Action</a>
-                            </div>
-                            <div class="card">
-                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/investment-3.png" class="card-image" alt="Something..." decoding="async" width="263" height="254">
-                                <h3 class="card-title">Card Title</h3>
-                                <p class="card-description">Supportive text and the essential context goes here.</p>
-                                <a href="#" class="card-cta">Action</a>
-                            </div>
-                            <div class="card">
-                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/investment-1.png" class="card-image" alt="Something..." decoding="async" width="263" height="254">
-                                <h3 class="card-title">Card Title</h3>
-                                <p class="card-description">Supportive text and the essential context goes here.</p>
-                                <a href="#" class="card-cta">Action</a>
-                            </div>
+                            <div class="swiper-scrollbar"></div>
                         </div>
                     </div>
                 </div>
