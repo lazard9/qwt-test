@@ -63,6 +63,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Variables
 --------------------------------------------------------------*/
 :root {
+    --blue-0: rgba(2, 79, 208, 0);
     --blue: #024fd0;
     --blue-1: #0448ba;
     --light-sky-blue: #dbe2ea;
@@ -1388,7 +1389,7 @@ textarea {
 --------------------------------------------- */
 .home-investment {
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
     background-color: #f4f4f4;
     overflow: hidden;
 }
@@ -1396,12 +1397,37 @@ textarea {
 @media screen and (min-width: 1025px) {
     .home-investment {
         padding-top: 150px;
-        padding-bottom: 150px;
+        padding-bottom: 120px;
     }  
 }
 
-.investment-title {
+.investment-heading,
+.investment-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.investment-heading {
     margin: 0 0 30px;
+}
+
+.investment-action {
+    margin-right: -8px;
+}
+
+@media screen and (min-width: 1025px) {
+    .investment-heading {
+        margin: 0 0 52px;
+    }
+
+    .investment-action {
+        margin-right: -12px;
+    }
+}
+
+.investment-title {
+    margin: 0;
     font-size: 18px;
     font-weight: 600;
     font-stretch: normal;
@@ -1412,9 +1438,34 @@ textarea {
 
 @media screen and (min-width: 1025px) {
     .investment-title {
-        margin: 0 0 52px;
         font-size: 34px;
     }  
+}
+
+.investment-action-text {
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--dark);
+}
+
+@media screen and (min-width: 1025px) {
+    .investment-action-text {
+        font-size: 20px;
+    }    
+}
+
+.investment-action-icon {
+    width: 34px;
+}
+
+@media screen and (min-width: 1025px) {
+    .investment-action-icon {
+        width: 48px;
+    }    
 }
 
 .investment-inner {
@@ -1439,9 +1490,27 @@ textarea {
 
 .investment-cards .card,
 .slider-card {
-    padding: 18px 19px 51px 18px;
+    position: relative;
+    padding: 18px 19px 74px 18px;
     background-color: #fff;
     border-radius: 24px;
+    height: 505px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+    .investment-cards .card,
+    .slider-card {
+        height: 525px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .investment-cards .card,
+    .slider-card {
+        height: 545px;
+    }
 }
 
 .investment-cards .card:first-of-type,
@@ -1457,6 +1526,66 @@ textarea {
 .investment-cards .card .card-image,
 .slider-card .card-image {
     width: 100%;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.slider-card.card--hover {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 320px;
+    transition: padding-top 0.32s ease-in-out;
+}
+
+.slider-card.card--hover:hover {
+    padding-top: 230px;
+}
+
+.slider-card.card--hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    opacity: 0.7;
+    background-image: linear-gradient(to bottom, var(--blue-0), var(--blue));
+    transition: height 0.32s ease-in-out;
+    z-index: 1;
+}
+
+.slider-card.card--hover:hover::after {
+    background-image: linear-gradient(to bottom, var(--blue), var(--blue));
+    height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .slider-card.card--hover {
+        padding-top: 340px;
+    }
+
+    .slider-card.card--hover:hover {
+        padding-top: 250px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .slider-card.card--hover {
+        padding-top: 360px;
+    }
+
+    .slider-card.card--hover:hover {
+        padding-top: 270px;
+    }
+}
+
+.slider-card .card-dots {
+    position: absolute;
+    top: 18px;
+    right: 9px;
+    z-index: 2;
 }
 
 .investment-cards .card .card-title,
@@ -1469,11 +1598,17 @@ textarea {
     line-height: normal;
     letter-spacing: normal;
     color: var(--dark);
+    position: relative;
+    z-index: 2;
+}
+
+.slider-card.card--hover .card-title {
+    color: #fff;
 }
 
 .investment-cards .card .card-description,
 .slider-card .card-description {
-    margin: 19px 0 72px;
+    margin: 19px 0 0;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -1482,6 +1617,12 @@ textarea {
     letter-spacing: normal;
     text-align: left;
     color: var(--dark);
+    position: relative;
+    z-index: 2;
+}
+
+.slider-card.card--hover .card-description {
+    color: #fff;
 }
 
 .investment-cards .card .card-cta,
@@ -1495,6 +1636,10 @@ textarea {
     text-align: center;
     color: var(--blue);
     text-decoration: none;
+    position: absolute;
+    left: 18px;
+    bottom: 55px;
+    z-index: 2;
 }
 
 .investment-cards .card .card-cta:hover,
@@ -1502,6 +1647,15 @@ textarea {
 .slider-card .card-cta:hover,
 .slider-card .card-cta:focus {
     color: var(--blue-1);
+}
+.slider-card.card--hover .card-cta {
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.32s ease-in-out;
+}
+
+.slider-card.card--hover:hover .card-cta {
+    opacity: 1;
 }
 
 
@@ -1549,13 +1703,6 @@ textarea {
     align-items: center;
 }
 
-.investment-inner .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .investment-inner .swiper-slide {
     width: 300px;
 }
@@ -1580,13 +1727,15 @@ textarea {
 /* Quisque porttitor
 --------------------------------------------- */
 .home-porttitor {
-    padding: 100px 38px;
+    padding-top: 95px;
+    padding-bottom: 125px;
     background-color: #fff;
 }
 
 @media screen and (min-width: 1025px) {
     .home-porttitor {
-        padding: 100px 38px;
+        padding-top: 142px;
+        padding-bottom: 185px;
         background-color: #fff;
     }
 }
@@ -1638,9 +1787,60 @@ textarea {
     flex-wrap: wrap;
 }
 
+.porttitor-cards .hidden {
+    opacity: 0;
+    transition: all 1000ms ease-in-out;
+    filter: blur(5px);
+    transform: translateX(-100%);
+}
+
+@media (prefers-reduced-motion) {
+    /* styles to apply if the user's settings are set to reduced motion */
+    .porttitor-cards .hidden {
+        transition: none;
+    }
+}
+
+.porttitor-cards .show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@media screen and (min-width: 620px) and (max-width: 768px) {
+    .porttitor-cards .hidden:nth-child(2n+2) {
+        transition-delay: 300ms;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .porttitor-cards .hidden:nth-child(3n+2) {
+        transition-delay: 300ms;
+    }
+
+    .porttitor-cards .hidden:nth-child(3n+3) {
+        transition-delay: 600ms;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .porttitor-cards .hidden:nth-child(4n+2) {
+        transition-delay: 300ms;
+    }
+
+    .porttitor-cards .hidden:nth-child(4n+3) {
+        transition-delay: 600ms;
+    }
+
+    .porttitor-cards .hidden:nth-child(4n+4) {
+        transition-delay: 900ms;
+    }
+}
+
 .porttitor-cards .card {
     text-align: center;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 @media screen and (min-width: 620px) {
@@ -1650,7 +1850,8 @@ textarea {
 
     .porttitor-cards .card {
         width: 48%;
-        margin: 0 1%;
+        margin-left: 1%;
+        margin-right: 1%;
     }
 }
 
@@ -1661,7 +1862,7 @@ textarea {
 
     .porttitor-cards .card {
         width: 31.5%;
-        margin: 0 0.75%;
+        margin: 0 0.75% 70px;
     }
 }
 
@@ -1672,7 +1873,7 @@ textarea {
 
     .porttitor-cards .card {
         width: 24%;
-        margin: 0 0.5%;
+        margin: 0 0.5% 90px;
     }
 }
 
@@ -1694,7 +1895,7 @@ textarea {
 }
 
 .porttitor-cards .card .card-description {
-    margin: 9px 0 50px;
+    margin: 9px 0 0;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -1703,18 +1904,6 @@ textarea {
     letter-spacing: normal;
     text-align: center;
     color: var(--dark);
-}
-
-@media screen and (min-width: 768px) {
-    .porttitor-cards .card .card-description {
-        margin-bottom: 70px;
-    }
-}
-
-@media screen and (min-width: 1025px) {
-    .porttitor-cards .card .card-description {
-        margin-bottom: 90px;
-    }
 }
 
 /* Parallax
@@ -1730,6 +1919,17 @@ textarea {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.home-paralax::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .05;
 }
 
 .paralax-title {

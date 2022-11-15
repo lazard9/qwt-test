@@ -22,29 +22,5 @@
 
 <?php wp_footer(); ?>
 
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-
-        var swiper2 = new Swiper(".mySwiper2", {
-            slidesPerView: "auto",
-            spaceBetween: 20,
-            scrollbar: {
-                el: ".swiper-scrollbar"
-            },
-        });
-    </script>
-
 </body>
 </html>
